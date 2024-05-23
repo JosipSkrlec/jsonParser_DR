@@ -13,3 +13,19 @@ C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.
 C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\en-150\JsonParser.resources.dll
 C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.DeltaReality_JsonParser.en-150.resources
 C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\en-150\JsonParser.resources.dll
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\bin\Debug\JsonParser.exe.config
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\bin\Debug\JsonParser.exe
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\bin\Debug\JsonParser.pdb
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\bin\Debug\en-150\JsonParser.resources.dll
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\bin\Debug\Newtonsoft.Json.dll
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\bin\Debug\Newtonsoft.Json.xml
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.csproj.AssemblyReference.cache
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.DeltaReality_JsonParser.resources
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.Properties.Resources.resources
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.DeltaReality_JsonParser.en-150.resources
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.csproj.GenerateResource.cache
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.csproj.CoreCompileInputs.cache
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\en-150\JsonParser.resources.dll
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.csproj.Up2Date
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.exe
+J:\Development\Unity Projects\jsonParser_DR\JsonParser\obj\Debug\JsonParser.pdb

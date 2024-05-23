@@ -30,70 +30,102 @@ namespace JsonParser
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeltaReality_JsonParser));
-            this.DeltaRealityGif = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DRGifLoader = new System.Windows.Forms.PictureBox();
+            this.JsonFileLoader = new System.Windows.Forms.Panel();
+            this.DropJsonText = new System.Windows.Forms.TextBox();
             this.BrowseJsonButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DeltaRealityGif)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DRGifLoader)).BeginInit();
+            this.JsonFileLoader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DeltaRealityGif
+            // DRGifLoader
             // 
-            resources.ApplyResources(this.DeltaRealityGif, "DeltaRealityGif");
-            this.DeltaRealityGif.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.DeltaRealityGif.Name = "DeltaRealityGif";
-            this.DeltaRealityGif.TabStop = false;
+            this.DRGifLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.DRGifLoader.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DRGifLoader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DRGifLoader.Image = ((System.Drawing.Image)(resources.GetObject("DRGifLoader.Image")));
+            this.DRGifLoader.InitialImage = null;
+            this.DRGifLoader.Location = new System.Drawing.Point(0, 0);
+            this.DRGifLoader.Name = "DRGifLoader";
+            this.DRGifLoader.Size = new System.Drawing.Size(784, 461);
+            this.DRGifLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.DRGifLoader.TabIndex = 0;
+            this.DRGifLoader.TabStop = false;
             // 
-            // panel1
+            // JsonFileLoader
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.BrowseJsonButton);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.JsonFileLoader.AllowDrop = true;
+            this.JsonFileLoader.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.JsonFileLoader.Controls.Add(this.DropJsonText);
+            this.JsonFileLoader.Controls.Add(this.BrowseJsonButton);
+            this.JsonFileLoader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.JsonFileLoader.Location = new System.Drawing.Point(0, 0);
+            this.JsonFileLoader.Name = "JsonFileLoader";
+            this.JsonFileLoader.Size = new System.Drawing.Size(784, 461);
+            this.JsonFileLoader.TabIndex = 1;
             // 
-            // textBox1
+            // DropJsonText
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Name = "textBox1";
+            this.DropJsonText.AllowDrop = true;
+            this.DropJsonText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DropJsonText.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DropJsonText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DropJsonText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DropJsonText.Enabled = false;
+            this.DropJsonText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.DropJsonText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DropJsonText.Location = new System.Drawing.Point(219, 207);
+            this.DropJsonText.Name = "DropJsonText";
+            this.DropJsonText.Size = new System.Drawing.Size(306, 40);
+            this.DropJsonText.TabIndex = 1;
+            this.DropJsonText.Text = "Drop .json file here!";
+            this.DropJsonText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BrowseJsonButton
             // 
-            resources.ApplyResources(this.BrowseJsonButton, "BrowseJsonButton");
+            this.BrowseJsonButton.AllowDrop = true;
+            this.BrowseJsonButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BrowseJsonButton.Location = new System.Drawing.Point(230, 425);
             this.BrowseJsonButton.Name = "BrowseJsonButton";
+            this.BrowseJsonButton.Size = new System.Drawing.Size(295, 24);
+            this.BrowseJsonButton.TabIndex = 0;
+            this.BrowseJsonButton.Text = "Browse for .json file";
             this.BrowseJsonButton.UseVisualStyleBackColor = true;
             // 
             // DeltaReality_JsonParser
             // 
+            this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            resources.ApplyResources(this, "$this");
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.DeltaRealityGif);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.DRGifLoader);
+            this.Controls.Add(this.JsonFileLoader);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeltaReality_JsonParser";
-            this.Opacity = 0.9D;
-            ((System.ComponentModel.ISupportInitialize)(this.DeltaRealityGif)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Delta Reality Json Parser";
+            ((System.ComponentModel.ISupportInitialize)(this.DRGifLoader)).EndInit();
+            this.JsonFileLoader.ResumeLayout(false);
+            this.JsonFileLoader.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox DeltaRealityGif;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox DRGifLoader;
+        private System.Windows.Forms.Panel JsonFileLoader;
         private System.Windows.Forms.Button BrowseJsonButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DropJsonText;
     }
 }
 
