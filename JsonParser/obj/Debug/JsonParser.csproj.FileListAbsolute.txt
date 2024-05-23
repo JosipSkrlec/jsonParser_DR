@@ -1,0 +1,15 @@
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.Properties.Resources.resources
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.csproj.GenerateResource.cache
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.csproj.CoreCompileInputs.cache
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\JsonParser.exe.config
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\JsonParser.exe
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\JsonParser.pdb
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.csproj.CopyComplete
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.exe
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.pdb
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.DeltaReality_JsonParser.resources
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\bin\Debug\en-150\JsonParser.resources.dll
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\JsonParser.DeltaReality_JsonParser.en-150.resources
+C:\Users\Josip\Desktop\JsonParserApp\JsonParser\JsonParser\obj\Debug\en-150\JsonParser.resources.dll

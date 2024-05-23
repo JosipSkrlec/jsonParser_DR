@@ -1,0 +1,47 @@
+{
+  "company": {
+    "name": "TechCorp",
+    "location": {
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA"
+    },
+    "employees": [
+      {
+        "id": 1,
+        "name": "Alice Johnson",
+        "roles": [
+          "Developer",
+          "Team Lead"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Bob Williams",
+        "roles": [
+          "Designer"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Charlie Brown",
+        "roles": [
+          "Developer",
+          "Tester"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Project X",
+        "status": "Ongoing",
+        "budget": 1000000
+      },
+      {
+        "name": "Project Y",
+        "status": "Completed",
+        "budget": 500000
+      }
+    ]
+  }
+}
