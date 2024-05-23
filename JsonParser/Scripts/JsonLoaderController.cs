@@ -18,6 +18,10 @@ namespace JsonParser.Scripts
 
         public void LoadJson(string jsonFilePath)
         {
+            // Assign the JSON file path
+            _jsonFilePath = jsonFilePath;
+
+            // Setup UI
             SetupUI();
 
             try
@@ -52,11 +56,10 @@ namespace JsonParser.Scripts
                     };
                     parent.Controls.Add(label);
 
-                    //top += 20;
-
                     top = GenerateJsonEditor(property.Value, parent, top);
 
-                    //top += 10;
+                    // Increase top to create space between controls
+                    top += 20;
                 }
             }
             else if (token is JArray array)
@@ -76,8 +79,13 @@ namespace JsonParser.Scripts
                     Width = 200,
                     Tag = token // Tag the TextBox with the JToken for later use
                 };
+
+                // Subscribe to TextChanged event for the TextBox
+                textBox.TextChanged += TextBox_TextChanged;
+
                 parent.Controls.Add(textBox);
 
+                // Increase top to create space between controls
                 top += 30;
             }
 
@@ -96,6 +104,7 @@ namespace JsonParser.Scripts
                         {
                             Control nextControl = parent.Controls[parent.Controls.IndexOf(control) + 1];
                             UpdateJsonValues(property.Value, nextControl);
+                            break; // Exit the loop after updating the value
                         }
                     }
                 }
@@ -115,10 +124,19 @@ namespace JsonParser.Scripts
                 {
                     if (control is TextBox textBox && textBox.Tag == token)
                     {
+                        // Update the value of the token directly
                         ((JValue)token).Value = textBox.Text;
+                        break; // Exit the loop after updating the value
                     }
                 }
             }
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            JToken token = (JToken)textBox.Tag;
+            ((JValue)token).Value = textBox.Text;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -129,6 +147,8 @@ namespace JsonParser.Scripts
                 File.WriteAllText(_jsonFilePath, _jsonStructure.ToString());
                 _labelValidation.Text = "JSON Saved Successfully";
                 _labelValidation.ForeColor = System.Drawing.Color.Green;
+
+                Console.WriteLine("BUTTON SAVED JSON");
             }
             catch (Exception ex)
             {
@@ -139,17 +159,13 @@ namespace JsonParser.Scripts
 
         private void SetupUI()
         {
-            // 
-            // panelJsonEditor
-            // 
+            // Add panelJsonEditor to the form
             _panelJsonEditor.AutoScroll = true;
             _panelJsonEditor.Location = new System.Drawing.Point(12, 12);
             _panelJsonEditor.Name = "panelJsonEditor";
             _panelJsonEditor.Size = new System.Drawing.Size(776, 396);
             _panelJsonEditor.TabIndex = 0;
-            // 
-            // buttonSave
-            // 
+            // Add buttonSave to the form
             _buttonSave.Location = new System.Drawing.Point(713, 415);
             _buttonSave.Name = "buttonSave";
             _buttonSave.Size = new System.Drawing.Size(75, 23);
@@ -157,14 +173,18 @@ namespace JsonParser.Scripts
             _buttonSave.Text = "Save";
             _buttonSave.UseVisualStyleBackColor = true;
             _buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // labelValidation
-            // 
+            // Add labelValidation to the form
             _labelValidation.AutoSize = true;
             _labelValidation.Location = new System.Drawing.Point(12, 420);
             _labelValidation.Name = "labelValidation";
             _labelValidation.Size = new System.Drawing.Size(0, 13);
             _labelValidation.TabIndex = 2;
+
+            // Add controls to the form
+            Form form = Application.OpenForms[0];
+            form.Controls.Add(_panelJsonEditor);
+            form.Controls.Add(_buttonSave);
+            form.Controls.Add(_labelValidation);
         }
     }
 }
