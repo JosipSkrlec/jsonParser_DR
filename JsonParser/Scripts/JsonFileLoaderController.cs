@@ -24,8 +24,6 @@ namespace JsonParser.Scripts
 
         private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
-            Console.WriteLine("MainForm_DragEnter MainForm_DragEnter MainForm_DragEnter");
-
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -46,8 +44,6 @@ namespace JsonParser.Scripts
 
         private void MainForm_DragDrop(object sender, DragEventArgs e)
         {
-            Console.WriteLine("MainForm_DragDrop MainForm_DragDrop MainForm_DragDrop");
-
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -55,7 +51,7 @@ namespace JsonParser.Scripts
 
                 if (Path.GetExtension(filePath).ToLower() == ".json")
                 {
-                    //OnJsonFileLoadedEvent?.Invoke(filePath);
+                    OnJsonFileLoadedEvent?.Invoke(filePath);
                 }
             }
         }

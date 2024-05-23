@@ -15,6 +15,8 @@ namespace JsonParser
 
         DelayController delayController = new DelayController();
         JsonFileLoaderController jsonFileLoaderController = new JsonFileLoaderController();
+        JsonLoaderController jsonLoaderController = new JsonLoaderController();
+
         CanvasController canvasController = new CanvasController();
 
         public DeltaReality_JsonParser()
@@ -39,7 +41,14 @@ namespace JsonParser
         {
             jsonFileLoaderController.ToggleDragDropDetection(this, false);
 
+            jsonLoaderController.OnJsonLoadedEvent += OnJsonLoaded;
+            jsonLoaderController.LoadJson(obj);
+
             canvasController.HideCanvasElement(JsonFileLoader);
+        }
+
+        private void OnJsonLoaded()
+        {
             Console.WriteLine("JSON FILE LOADED!");
         }
     }

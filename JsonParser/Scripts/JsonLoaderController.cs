@@ -7,7 +7,7 @@ namespace JsonParser.Scripts
 {
     internal class JsonLoaderController
     {
-        public Action OnJsonSelectedEvent;
+        public Action OnJsonLoadedEvent;
 
         private JObject _jsonStructure;
         private Panel _panelJsonEditor = new Panel();
@@ -18,6 +18,8 @@ namespace JsonParser.Scripts
 
         public void LoadJson(string jsonFilePath)
         {
+            SetupUI();
+
             try
             {
                 string json = File.ReadAllText(jsonFilePath);
@@ -25,6 +27,8 @@ namespace JsonParser.Scripts
                 GenerateJsonEditor(_jsonStructure, _panelJsonEditor, 0);
                 _labelValidation.Text = "JSON Loaded Successfully";
                 _labelValidation.ForeColor = System.Drawing.Color.Green;
+
+                OnJsonLoadedEvent?.Invoke();
             }
             catch (Exception ex)
             {
@@ -133,7 +137,7 @@ namespace JsonParser.Scripts
             }
         }
 
-        private void Setup()
+        private void SetupUI()
         {
             // 
             // panelJsonEditor

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace JsonParser.Scripts
 {
@@ -53,39 +52,5 @@ namespace JsonParser.Scripts
             _currentIndex = (_currentIndex + 1) % _opacityLevels.Length;
             _form.Opacity = _opacityLevels[_currentIndex] / 100.0;
         }
-
-        #region Rotation Part
-
-        //protected override void OnKeyDown(KeyEventArgs e)
-        //{
-        //base.OnKeyDown(e);
-
-        //// Check if Ctrl+Alt+R is pressed
-        //if (e.Control && e.Alt && e.KeyCode == Keys.R)
-        //{
-        //    RotateForm();
-        //}
-        //}
-
-        //private void RotateForm()
-        //{
-        //    _currentRotation += 90;
-        //    if (_currentRotation >= 360) _currentRotation = 0;
-
-        //    // Apply rotation to the form
-        //    this.SuspendLayout();
-        //    this.Size = new Size(this.Height, this.Width);
-        //    this.ResumeLayout();
-
-        //    Graphics g = this.CreateGraphics();
-        //    g.TranslateTransform(this.ClientSize.Width / 2, this.ClientSize.Height / 2);
-        //    g.RotateTransform(_currentRotation);
-        //    g.TranslateTransform(-this.ClientSize.Width / 2, -this.ClientSize.Height / 2);
-        //    g.Dispose();
-
-        //    // Redraw the form's contents (optional)
-        //    this.Invalidate();
-        //}
-        #endregion
     }
 }

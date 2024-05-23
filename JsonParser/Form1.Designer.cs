@@ -33,7 +33,6 @@ namespace JsonParser
             this.DRGifLoader = new System.Windows.Forms.PictureBox();
             this.JsonFileLoader = new System.Windows.Forms.Panel();
             this.DropJsonText = new System.Windows.Forms.TextBox();
-            this.BrowseJsonButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DRGifLoader)).BeginInit();
             this.JsonFileLoader.SuspendLayout();
             this.SuspendLayout();
@@ -54,10 +53,8 @@ namespace JsonParser
             // 
             // JsonFileLoader
             // 
-            this.JsonFileLoader.AllowDrop = true;
             this.JsonFileLoader.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.JsonFileLoader.Controls.Add(this.DropJsonText);
-            this.JsonFileLoader.Controls.Add(this.BrowseJsonButton);
             this.JsonFileLoader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.JsonFileLoader.Location = new System.Drawing.Point(0, 0);
             this.JsonFileLoader.Name = "JsonFileLoader";
@@ -66,7 +63,6 @@ namespace JsonParser
             // 
             // DropJsonText
             // 
-            this.DropJsonText.AllowDrop = true;
             this.DropJsonText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -74,25 +70,14 @@ namespace JsonParser
             this.DropJsonText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DropJsonText.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DropJsonText.Enabled = false;
-            this.DropJsonText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.DropJsonText.Font = new System.Drawing.Font("Microsoft Yi Baiti", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DropJsonText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.DropJsonText.Location = new System.Drawing.Point(219, 207);
             this.DropJsonText.Name = "DropJsonText";
-            this.DropJsonText.Size = new System.Drawing.Size(306, 40);
+            this.DropJsonText.Size = new System.Drawing.Size(306, 36);
             this.DropJsonText.TabIndex = 1;
             this.DropJsonText.Text = "Drop .json file here!";
             this.DropJsonText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BrowseJsonButton
-            // 
-            this.BrowseJsonButton.AllowDrop = true;
-            this.BrowseJsonButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BrowseJsonButton.Location = new System.Drawing.Point(230, 425);
-            this.BrowseJsonButton.Name = "BrowseJsonButton";
-            this.BrowseJsonButton.Size = new System.Drawing.Size(295, 24);
-            this.BrowseJsonButton.TabIndex = 0;
-            this.BrowseJsonButton.Text = "Browse for .json file";
-            this.BrowseJsonButton.UseVisualStyleBackColor = true;
             // 
             // DeltaReality_JsonParser
             // 
@@ -107,7 +92,6 @@ namespace JsonParser
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -124,7 +108,6 @@ namespace JsonParser
 
         private System.Windows.Forms.PictureBox DRGifLoader;
         private System.Windows.Forms.Panel JsonFileLoader;
-        private System.Windows.Forms.Button BrowseJsonButton;
         private System.Windows.Forms.TextBox DropJsonText;
     }
 }
