@@ -59,7 +59,7 @@ namespace JsonParser.Scripts
                     top = GenerateJsonEditor(property.Value, parent, top);
 
                     // Increase top to create space between controls
-                    top += 20;
+                    //top += 20;
                 }
             }
             else if (token is JArray array)
