@@ -92,51 +92,97 @@ namespace JsonParser.Scripts
             return top;
         }
 
-        private void UpdateJsonValues(JToken token, Control parent)
+private void UpdateJsonValues(JToken token, Control parent)
+{
+    if (token is JObject obj)
+    {
+        foreach (var property in obj.Properties())
         {
-            if (token is JObject obj)
+            foreach (Control control in parent.Controls)
             {
-                foreach (var property in obj.Properties())
+                if (control is Label label && label.Text == property.Name)
                 {
-                    foreach (Control control in parent.Controls)
-                    {
-                        if (control is Label label && label.Text == property.Name)
-                        {
-                            Control nextControl = parent.Controls[parent.Controls.IndexOf(control) + 1];
-                            UpdateJsonValues(property.Value, nextControl);
-                            break; // Exit the loop after updating the value
-                        }
-                    }
-                }
-            }
-            else if (token is JArray array)
-            {
-                int index = 0;
-                foreach (var item in array)
-                {
-                    UpdateJsonValues(item, parent.Controls[index]);
-                    index++;
-                }
-            }
-            else
-            {
-                foreach (Control control in parent.Controls)
-                {
-                    if (control is TextBox textBox && textBox.Tag == token)
-                    {
-                        // Update the value of the token directly
-                        ((JValue)token).Value = textBox.Text;
-                        break; // Exit the loop after updating the value
-                    }
+                    Control nextControl = parent.Controls[parent.Controls.IndexOf(control) + 1];
+                    UpdateJsonValues(property.Value, nextControl);
+                    break; // Exit the loop after updating the value
                 }
             }
         }
+    }
+    else if (token is JArray array)
+    {
+        int index = 0;
+        foreach (var item in array)
+        {
+            UpdateJsonValues(item, parent.Controls[index]);
+            index++;
+        }
+    }
+    else
+    {
+        foreach (Control control in parent.Controls)
+        {
+            if (control is TextBox textBox && textBox.Tag == token)
+            {
+                // Update the value of the token directly
+                JValue jValue = (JValue)token;
+                switch (jValue.Type)
+                {
+                    case JTokenType.Integer:
+                        if (int.TryParse(textBox.Text, out int intValue))
+                            jValue.Value = intValue;
+                        break;
+                    case JTokenType.Float:
+                        if (double.TryParse(textBox.Text, out double doubleValue))
+                            jValue.Value = doubleValue;
+                        break;
+                    case JTokenType.Boolean:
+                        if (bool.TryParse(textBox.Text, out bool boolValue))
+                            jValue.Value = boolValue;
+                        break;
+                    case JTokenType.Date:
+                        if (DateTime.TryParse(textBox.Text, out DateTime dateValue))
+                            jValue.Value = dateValue;
+                        break;
+                    default:
+                        jValue.Value = textBox.Text;
+                        break;
+                }
+                break; // Exit the loop after updating the value
+            }
+        }
+    }
+}
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             JToken token = (JToken)textBox.Tag;
-            ((JValue)token).Value = textBox.Text;
+            JValue jValue = (JValue)token;
+
+            // Attempt to parse the text back to the original type
+            switch (jValue.Type)
+            {
+                case JTokenType.Integer:
+                    if (int.TryParse(textBox.Text, out int intValue))
+                        jValue.Value = intValue;
+                    break;
+                case JTokenType.Float:
+                    if (double.TryParse(textBox.Text, out double doubleValue))
+                        jValue.Value = doubleValue;
+                    break;
+                case JTokenType.Boolean:
+                    if (bool.TryParse(textBox.Text, out bool boolValue))
+                        jValue.Value = boolValue;
+                    break;
+                case JTokenType.Date:
+                    if (DateTime.TryParse(textBox.Text, out DateTime dateValue))
+                        jValue.Value = dateValue;
+                    break;
+                default:
+                    jValue.Value = textBox.Text;
+                    break;
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
